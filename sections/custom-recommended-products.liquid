@@ -117,20 +117,19 @@
       <div class="main-carousel">
         {% assign recommended_tag = product.metafields.custom.recommendation.value %}
         {% assign matched_products = '' %}
-        <!--
-          <div class="debug-info">
-            <h3>Debug Info</h3>
 
-            <p><strong>Product Tags:</strong> {{ product.tags | join: ', ' }}</p>
+        <div class="debug-info">
+          <h3>Debug Info</h3>
 
-            <p><strong>Metafield Value:</strong> {{ product.metafields.custom.recommendation.value }}</p>
+          <p><strong>Product Tags:</strong> {{ product.tags | join: ', ' }}</p>
 
-              {% for collection in collections %}
-                <p>{{ collection.title }} - {{ collection.handle }}</p>
-              {% endfor %}
+          <p><strong>Metafield Value:</strong> {{ product.metafields.custom.recommendation.value }}</p>
 
-          </div>
-        -->
+          {% for collection in collections %}
+            <p>{{ collection.title }} - {{ collection.handle }}</p>
+          {% endfor %}
+        </div>
+
         {% if recommended_tag != blank %}
           {% assign matched_products = '' %}
           {% for p in collections['best-sellers'].products %}
