@@ -1,0 +1,29 @@
+{% comment %} Custom Welcome Message Section {% endcomment %}
+
+<div class="welcome-message">
+  {% if customer %}
+    <h2>Welcome back, {{ customer.first_name }}!</h2>
+    <p>We’re thrilled to have you back. Check out our latest gear for your next adventure!</p>
+    <p>Here’s a special 10% off code just for you: <strong>WANDER10</strong></p>
+  {% else %}
+    <h2>Welcome to Wanderlust Gear!</h2>
+    <p>Explore top-quality hiking, camping, and outdoor essentials — sign up to unlock special discounts!</p>
+  {% endif %}
+</div>
+
+<style>
+  .welcome-message {
+    text-align: center;
+
+    background-color: #CDB79E;
+
+  }
+  .welcome-message h2 {
+    color: #4a7c59;
+    font-size: 1.8rem;
+  }
+  .welcome-message p {
+    color: #333;
+    font-size: 1.1rem;
+  }
+</style>

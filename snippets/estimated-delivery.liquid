@@ -1,0 +1,86 @@
+<div class="delivery-check-section">
+  <label for="pincode" class="delivery-title">Estimated Delivery Time</label>
+  <div class="delivery-input-container">
+    <input type="text" class="codeValidatorinput" id="pincode" placeholder="Enter pincode" maxlength="6">
+    <button class="codeValidatorbtn" id="checkDelivery">Check Delivery</button>
+  </div>
+  <p id="deliveryMessage"></p>
+</div>
+
+<script>
+  const deliveryEstimates = {
+    "400001": "3-5 days", "400059": "3-5 days", "400080": "3-5 days", // Mumbai
+    "110001": "5-7 days", "110085": "5-7 days", "110092": "5-7 days", // Delhi
+    "560001": "7-10 days", "560034": "7-10 days", "560100": "7-10 days", // Bangalore
+    "411001": "4-6 days", "411038": "4-6 days", "411057": "4-6 days"  // Pune
+  };
+
+  document.getElementById("checkDelivery").addEventListener("click", function(event) {
+    event.preventDefault();
+    const pinCode = document.getElementById("pincode").value.trim();
+    const messageElement = document.getElementById("deliveryMessage");
+
+    if (pinCode.length !== 6 || isNaN(pinCode)) {
+      messageElement.textContent = "Please enter a valid 6-digit PIN code.";
+      messageElement.style.color = "red";
+    } else if (deliveryEstimates[pinCode]) {
+      messageElement.textContent = `Estimated delivery time: ${deliveryEstimates[pinCode]}`;
+      messageElement.style.color = "green";
+    } else {
+      messageElement.textContent = "Delivery estimate not available for this PIN code.";
+      messageElement.style.color = "black";
+    }
+  });
+</script>
+
+<style>
+      .delivery-check-section {
+        margin-top: 20px;
+      }
+         .codeValidatorinput {
+        background: 0 0;
+        border: .598px solid rgba(125, 125, 125);
+        border-radius: .5rem;
+        padding: 1.5rem 1.2rem;
+        width: 100%;
+        font-size: 1.4rem;
+    }
+
+      .delivery-title {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      .delivery-input-container {
+        display: flex;
+        align-items: center;
+
+        border-radius: 5px;
+        /* padding: 5px 10px; */
+        width: 95%;
+      }
+
+
+
+    .codeValidatorbtn {
+      background: 0 0;
+      margin-left: -11rem;
+      border: 0;
+      cursor: pointer;
+      float: right;
+      color: #000;
+  }
+
+      #checkDelivery:hover {
+        text-decoration: underline;
+      }
+
+      #deliveryMessage {
+        font-size: 14px;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+</style>

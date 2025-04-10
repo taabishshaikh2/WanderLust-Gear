@@ -1,0 +1,136 @@
+/* .slick__carousel--header {
+  margin-left: 1em;
+}
+
+.slick__carousel--exterior {
+  padding: 6vw;
+}
+.slick__carousel--quotation {
+  width: 8vw;
+}
+.slick__carousel--interior {
+  padding: 6vw;
+  -webkit-box-shadow: 0px 10px 13px -7px #787272,
+    0px -1px 23px -3px rgba(0, 0, 0, 0.52);
+  box-shadow: 0px 10px 13px -7px #888686,
+    0px -1px 23px -3px rgba(125, 123, 123, 0.52);
+}
+.slick__carousel--quote {
+  font-size: 4vw;
+  font-weight: bold;
+}
+.slick__carousel--portrait {
+  margin: 0 auto;
+
+  width: 25vw;
+  padding-top: 3vw;
+}
+.slick__carousel--name {
+  text-align: center;
+}
+
+@media (min-width: 750px) {
+  .slick__carousel--exterior {
+    padding: 2vw;
+  }
+  .slick__carousel--interior {
+    padding: 3vw;
+  }
+  .slick__carousel--quotation {
+    width: 4vw;
+  }
+  .slick__carousel--quote {
+    font-size: 2vw;
+  }
+  .slick__carousel--portrait {
+    width: 15vw;
+    padding-top: 1vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  .slick__carousel--exterior {
+    padding: 2vw;
+  }
+  .slick__carousel--interior {
+    padding: 3vw;
+  }
+  .slick__carousel--quotation {
+    width: 3vw;
+  }
+  .slick__carousel--quote {
+    font-size: 1.5vw;
+  }
+  .slick__carousel--portrait {
+    width: 18vw;
+  }
+  .slick__carousel--name {
+    font-size: 1.5vw;
+  }
+}
+ */
+.slick-arrow{
+  width: 40px !important;
+  height: 40px !important;
+      background: #f0f0f0 !important;
+    border-radius: 50% !important;
+
+
+}
+.slick-prev{
+  z-index: 9999 !important ;
+ left: 0px !important;
+}
+.slick-next{
+  right: 0px !important;
+}
+.slick-dots{
+  visibility: hidden !important;
+}
+
+.slick__carousel--header{
+  text-align:center
+}
+.slick-slider{
+  margin-left: 35px
+}
+
+/* Style for the exterior box */
+.slick__carousel--exterior {
+
+
+  border-radius: 15px; /* Rounded corners */
+padding: 25px;
+}
+.slick__carousel--quote{
+  text-align:center
+  
+}
+.slick__carousel--quote p{
+  margin: 0 !important;
+}
+
+/* Style for the image */
+.slick__carousel--portrait {
+
+  width: 100%; /* Fill the entire width of the box */
+border-style: solid;
+    border-color: #F6E5F8;
+    border-radius: 30px 30px 30px 30px;
+}
+@media (max-width: 768px) {
+  .slick__carousel--exterior {
+    padding: 3px; /* Remove padding for mobile layout */
+  }
+}
+
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* Display arrows on hover */
+.slick__carousel--container:hover .slick-prev,
+.slick__carousel--container:hover .slick-next {
+  display: flex !important;
+}
