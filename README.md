@@ -1,5 +1,5 @@
 ﻿# WanderLust-Gear
-# WanderLust-Gear
+
 README: Recommended Products Section - Wanderlust Gear
 Overview
 This project implements a Recommended Products section within the Wanderlust Gear Shopify theme. The section dynamically fetches and displays products based on metafields, enhancing user experience and product discoverability.
