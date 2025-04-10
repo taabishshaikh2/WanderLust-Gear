@@ -118,21 +118,23 @@
         {% assign recommended_tag = product.metafields.custom.recommendation.value %}
         {% assign matched_products = '' %}
 
-        <div class="debug-info">
-          <h3>Debug Info</h3>
+        <!--
+          <div class="debug-info">
+            <h3>Debug Info</h3>
 
-          <p><strong>Product Tags:</strong> {{ product.tags | join: ', ' }}</p>
+            <p><strong>Product Tags:</strong> {{ product.tags | join: ', ' }}</p>
 
-          <p><strong>Metafield Value:</strong> {{ product.metafields.custom.recommendation.value }}</p>
+            <p><strong>Metafield Value:</strong> {{ product.metafields.custom.recommendation.value }}</p>
 
-          {% for collection in collections %}
-            <p>{{ collection.title }} - {{ collection.handle }}</p>
-          {% endfor %}
-        </div>
+            {% for collection in collections %}
+              <p>{{ collection.title }} - {{ collection.handle }}</p>
+            {% endfor %}
+          </div>
+        -->
 
         {% if recommended_tag != blank %}
           {% assign matched_products = '' %}
-          {% for p in collections['best-sellers'].products %}
+          {% for p in collections['best-seller'].products %}
             {% if p.tags contains recommended_tag and p.id != product.id %}
               {% assign matched_products = matched_products | append: p.handle | append: ',' %}
             {% endif %}
