@@ -180,23 +180,32 @@
 </div>
 
 <script>
-  // script for flickity initialization
     document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.querySelector(".main-carousel");
+      const carousel = document.querySelector(".main-carousel");
 
-    if (carousel && carousel.children.length > 0) {
-      new Flickity(carousel, {
-           cellAlign: "left", // Ensures proper alignment
-     contain: true,
-     wrapAround: true,
-  freeScroll: true,
-     prevNextButtons: true,
-     pageDots: false,
-     groupCells: 4,
-      });
-    } else {
-      console.error("Carousel content not loaded!");
-    }
+      if (carousel && carousel.children.length > 0) {
+          function getGroupCells() {
+              return window.innerWidth < 768 ? 1 : 4; // 1 product on mobile, 4 on desktop
+          }
+
+          const flkty = new Flickity(carousel, {
+              cellAlign: "left",
+              contain: true,
+              wrapAround: true,
+              freeScroll: true,
+              prevNextButtons: true,
+              pageDots: false,
+              groupCells: getGroupCells(),
+          });
+
+          // Update on window resize
+          window.addEventListener("resize", function () {
+              flkty.options.groupCells = getGroupCells();
+              flkty.reloadCells();
+          });
+      } else {
+          console.error("Carousel content not loaded!");
+      }
   });
 </script>
 
